@@ -1,17 +1,29 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema 6</title>
+</head>
+<body>
+    <h1>Area de un Circulo</h1>
+    <p>Indique el radio del circulo para encontrar su area.</p>
+    <p><input type="number" id="numero">
+    <button type="button" id="btnValidar" onclick="areaCirculo()">Validar</button></p>
+    <h2>Respuesta</h2>
+    <p id="respuesta"></p>
+</body>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from './components/actividad2.vue'
 
-export default {
+/*export default {
   name: 'App',
   components: {
     HelloWorld
   }
-}
+}*/
 </script>
 
 <style>
