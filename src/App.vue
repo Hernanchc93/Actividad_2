@@ -1,29 +1,52 @@
 <template>
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Problema 6</title>
-</head>
-<body>
-    <h1>Area de un Circulo</h1>
-    <p>Indique el radio del circulo para encontrar su area.</p>
-    <p><input type="number" id="numero">
-    <button type="button" id="btnValidar" onclick="areaCirculo()">Validar</button></p>
-    <h2>Respuesta</h2>
-    <p id="respuesta"></p>
-</body>
+  <img alt="Vue logo" src="./assets/logo.png">
+  <br />
+  <input type="number" v-model="radio" />
+  <button @click="areaCirculo">Calcular area</button>
+  <p>El área es <strong>{{ resultado }}</strong></p>
+
+  <input type="number" v-model="num1" />
+  <input type="number" v-model="num2" />
+  <button @click="suma">Calcular Suma</button>
+  <p>El resultado de la suma es <strong style="color: red">{{ resultadosuma }}</strong></p>
+
+
+  <actividad2 msg="Area del circulo" />
+
 </template>
 
 <script>
-import HelloWorld from './components/actividad2.vue'
+import actividad2 from './components/actividad2.vue'
 
-/*export default {
+export default {
   name: 'App',
+  data() {
+    return {
+      radio: 1,
+      resultado: 0,
+      num1: 0,
+      num2: 0,
+      resultadosuma: 0,
+    }
+  },
   components: {
-    HelloWorld
+    actividad2
+  },
+  methods: {
+    areaCirculo() {
+      this.resultado = ((Math.PI) * (Math.pow(this.radio, 2)))
+    },
+    suma() {
+      if (this.num1 > 0 && this.num2 > 0) {
+        this.resultadosuma = this.num1 + this.num2
+      }
+      else {
+        alert("Digite numero mayor a 0")
+      }
+
+    }
   }
-}*/
+}
 </script>
 
 <style>
